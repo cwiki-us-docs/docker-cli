@@ -14,29 +14,24 @@ keywords: "docker, run, configure, runtime"
 
 # Docker 运行参考
 
-Docker runs processes in isolated containers. A container is a process
-which runs on a host. The host may be local or remote. When an operator
-executes `docker run`, the container process that runs is isolated in
-that it has its own file system, its own networking, and its own
-isolated process tree separate from the host.
+Docker 的运行进程是从容器中独立的。一个容器就是一个运行在主机上的一个进程。这个主机可以是本地主机也可以是远程主机。
+当你执行 `docker run` 命令的时候，容器进程将会启动并且和主机进行隔离，同时这个进程还有自己的文件系统，自己的网络和与主机进行隔离的独立进程树。
 
-This page details how to use the `docker run` command to define the
-container's resources at runtime.
+这个页面将会详细的描述如何使用 `docker run` 命令来在运行时定义容器的资源。
 
-## General form
+## 基本格式
 
-The basic `docker run` command takes this form:
+命令 `docker run` 使用下面的基本定义格式：
 
     $ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 
-The `docker run` command must specify an [*IMAGE*](https://docs.docker.com/glossary/#image)
-to derive the container from. An image developer can define image
-defaults related to:
+命令 `docker run` 必须要在格式中指定一个 [*镜像（IMAGE）*](https://docs.docker.com/glossary/#image)。一个镜像的开发人员可以
+定义镜像的一些参数：
 
- * detached or foreground running
- * container identification
- * network settings
- * runtime constraints on CPU and memory
+ * 分离（detached）或者前置（foreground）运行
+ * 容器定义
+ * 网络设置
+ * 运行时需要的 CPU 和内存资源
 
 With the `docker run [OPTIONS]` an operator can add to or override the
 image defaults set by a developer. And, additionally, operators can
