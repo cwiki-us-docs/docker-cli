@@ -12,7 +12,7 @@ keywords: "docker, run, configure, runtime"
      will be rejected.
 -->
 
-# Docker run reference
+# Docker 运行参考
 
 Docker runs processes in isolated containers. A container is a process
 which runs on a host. The host may be local or remote. When an operator
